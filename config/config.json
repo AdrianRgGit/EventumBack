@@ -1,0 +1,26 @@
+{
+    "development": {
+      "username": "dreamteam",
+      "password": "Eventum7",
+      "database": "desafio",
+      "host": "desafio.crywxjhezmrw.eu-west-3.rds.amazonaws.com",
+      "dialect": "mysql",
+      "jwt_secret": "1234"
+    },
+    "test": {
+      "username": "root",
+      "password": "colombia1010",
+      "database": "marina_development",
+      "host": "7.tcp.eu.ngrok.io",
+      "port": "10929",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": "colombia1010",
+      "database": "marina_development",
+      "host": "7.tcp.eu.ngrok.io",
+      "port": "10929",
+      "dialect": "mysql"
+    }
+  }
