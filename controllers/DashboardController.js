@@ -19,9 +19,9 @@ function getMonthInLetters(monthNumber) {
 }
 
 const DashboardController = {
-async getEventById(req, res) {
+  async getEventById(req, res) {
     const { id } = req.params;
-
+  
     try {
       const eventUser = await EventUser.findOne({
         where: { event_id: id },
@@ -32,22 +32,32 @@ async getEventById(req, res) {
           },
         ],
       });
-
+  
       if (!eventUser) {
         return res.status(404).json({ message: 'Evento no encontrado' });
       }
-
+  
       const event = eventUser.Event;
       const formattedDateTime = formatDateTime(event.dateTime);
-      
+  
       const [day, month] = formattedDateTime.split('-');
-
-      return res.status(200).json({ ...event.toJSON(), day, month });
+  
+      // Crear un objeto JSON con los campos deseados
+      const response = {
+        title: event.title,
+        description: event.description,
+        speacker: event.speacker,
+        day,
+        month,
+      };
+  
+      return res.status(200).json(response);
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: 'Error del servidor' });
     }
-},
+  },
+  
 
 async getTimes(req, res) {
   const { id } = req.params;
