@@ -49,75 +49,6 @@ async getEventById(req, res) {
     }
 },
 
-async getCapacity(req, res) {
-  const { id } = req.params;
-
-  if (typeof id === 'undefined' || isNaN(id)) {
-    return res.status(400).json({ message: 'ID de evento no válido' });
-  }
-
-  try {
-    const event = await EventUser.findOne({
-      where: { id },
-      include: [
-        {
-          model: Event,
-          as: 'Event',
-          include: [
-            {
-              model: Location,
-              as: 'location',
-              attributes: ['capacity'],
-            },
-          ],
-        },
-      ],
-    });
-
-    if (!event) {
-      return res.status(404).json({ message: 'Evento no encontrado' });
-    }
-
-    const location = event.Event.location;
-    return res.status(200).json(location);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: 'Error del servidor' });
-  }
-},
-
-async getSpeacker(req, res) {
-  const { id } = req.params;
-
-  if (typeof id === 'undefined' || isNaN(id)) {
-      return res.status(400).json({ message: 'ID de evento no válido' });
-  }
-
-  try {
-      const event = await EventUser.findOne({
-          where: { event_id: id },
-          include: [
-              {
-                  model: Event,
-                  as: 'Event',
-                  attributes: ['speacker'], 
-              },
-          ],
-      });
-
-      if (!event) {
-          return res.status(404).json({ message: 'Evento no encontrado' });
-      }
-
-      const speackerName = event.Event.speacker;
-
-      return res.status(200).json({ speacker: speackerName });
-  } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: 'Error del servidor' });
-  }
-}, 
-
 async getTimes(req, res) {
   const { id } = req.params;
 
@@ -250,6 +181,27 @@ async getAttendees(req, res) {
   }
 
   try {
+    const event = await EventUser.findOne({
+      where: { id },
+      include: [
+        {
+          model: Event,
+          as: 'Event',
+          include: [
+            {
+              model: Location,
+              as: 'location',
+              attributes: ['capacity'],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!event) {
+      return res.status(404).json({ message: 'Evento no encontrado' });
+    }
+
     const uniqueUserCount = await EventUser.count({
       distinct: true,
       col: 'user_id',
@@ -281,12 +233,13 @@ async getAttendees(req, res) {
       ],
     });
 
+    const location = event.Event.location;
+
     return res.status(200).json({
-      attendees: {
-        registered: uniqueUserCount,
-        confirmed: confirmedAttendees,
-        present: attendeeCount,
-      },
+      registered: uniqueUserCount,
+      confirmed: confirmedAttendees,
+      present: attendeeCount,
+      capacity: location.capacity,
     });
   } catch (error) {
     console.error(error);
@@ -294,34 +247,6 @@ async getAttendees(req, res) {
   }
 },
 
-async getUserById(req, res) {
-  const { id } = req.params;
-
-  if (typeof id === 'undefined' || isNaN(id)) {
-      return res.status(400).json({ message: 'ID de usuario no válido' });
-  }
-
-  try {
-      const user = await EventUser.findOne({
-          where: { user_id: id },
-          include: [
-              {
-                  model: User,
-                  as: 'User',
-              },
-          ],
-      });
-
-      if (!user) {
-          return res.status(404).json({ message: 'Usuario no encontrado' });
-      }
-
-      return res.status(200).json(user);
-  } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: 'Error del servidor' });
-  }
-},
 
 async getCountry(req, res) {
   const { id } = req.params;
