@@ -4,7 +4,6 @@ const DashboardController = require("../controllers/DashboardController");
 const { authentication, isAdmin } = require("../middleware/authentication");
 
 router.get("/event/:id", DashboardController.getEventById);
-
 router.get("/event/:id/getTimes", DashboardController.getTimes);
 router.get('/event/:id/getType', DashboardController.getType);
 router.get('/event/:id/getAttendees', DashboardController.getAttendees);

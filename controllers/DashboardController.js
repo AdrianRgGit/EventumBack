@@ -236,17 +236,18 @@ async getAttendees(req, res) {
     const location = event.Event.location;
 
     return res.status(200).json({
-      registered: uniqueUserCount,
-      confirmed: confirmedAttendees,
-      present: attendeeCount,
-      capacity: location.capacity,
+      location,
+      attendees: {
+        registered: uniqueUserCount,
+        confirmed: confirmedAttendees,
+        present: attendeeCount,
+      },
     });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Error del servidor' });
   }
 },
-
 
 async getCountry(req, res) {
   const { id } = req.params;
