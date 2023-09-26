@@ -5,5 +5,4 @@ const { authentication, isAdmin } = require("../middleware/authentication");
 
 router.get("/event/:id", DashboardController.getEventById);
 
-
 module.exports = router;
