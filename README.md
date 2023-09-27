@@ -346,6 +346,26 @@ As of now, the project is in active development, with the following recent updat
 
 ## 6. Requirements
 
+**Minimum Requirements:**
+
+1. **Operating System:**
+   - No specific operating system is required; the project is compatible with various operating systems such as Windows, macOS, and various Linux distributions.
+
+2. **Node.js:**
+   - You must have Node.js installed on your system. The latest LTS version of Node.js is recommended.
+
+3. **Database:**
+   - This project uses a MySQL database. Ensure you have access to a MySQL instance or set it up as per the project's specifications.
+
+4. **Web Browser:**
+   - To access the API documentation and test the functionalities, it's recommended to use a modern web browser like Google Chrome or Mozilla Firefox.
+
+5. **Node.js Dependencies:**
+   - Install project dependencies using the `npm install` command in the project's root to ensure that all required libraries are available.
+
+6. **Code Editor (Optional):**
+   - To customize the project or make code modifications, you can use a code editor of your choice, such as Visual Studio Code or Sublime Text.
+
 
 <div align="right">
   <a href="#top">↑ Back to the top</a>
@@ -386,9 +406,12 @@ If you need additional support or encounter specific issues related to the proje
 </div>
 
 ## 8. Relevant links
-[NodeJS download](https://nodejs.org/es/download)
+**Download**
 
-[MySQL download](https://www.mysql.com/downloads/)
+[NodeJS](https://nodejs.org/es/download)
+
+[MySQL](https://www.mysql.com/downloads/)
+
 
 <div align="right">
   <a href="#top">↑ Back to the top</a>
@@ -396,6 +419,8 @@ If you need additional support or encounter specific issues related to the proje
 
 ## 9. README update
 
+**27/09/2023**
+Creation of the first Readme
 
 <div align="right">
   <a href="#top">↑ Back to the top</a>
@@ -457,8 +482,38 @@ I cannot express how grateful I am for your commitment and dedication. This proj
 
 In summary, thank you very much to all of you for your hard work and dedication. This project would not be possible without each one of you. I am excited about what the future holds, and I am confident that we will continue to achieve great things together.
 
+**Our fullstack team**
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div style="text-align: center; margin-right: 20px;">
+    <img src="https://avatars.githubusercontent.com/u/134106748?v=4" alt="Sara Oriola" width="50" height="50" style="border-radius: 50%;">
+    <br>
+    <a href="https://github.com/saraoriola">Sara Oriola</a>
+  </div>
+
+  <div style="text-align: center; margin-right: 20px;">
+    <img src="https://avatars.githubusercontent.com/u/45803399?v=4" alt="Patricia Gonzalez" width="50" height="50" style="border-radius: 50%;">
+    <br>
+    <a href="https://github.com/patrigarcia">Patricia Gonzalez</a>
+  </div>
+
+  <div style="text-align: center; margin-right: 20px;">
+    <img src="https://avatars.githubusercontent.com/u/102881802?v=4" alt="Victor Macedo" width="50" height="50" style="border-radius: 50%;">
+    <br>
+    <a href="https://github.com/victorcodigos">Victor Macedo</a>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="https://avatars.githubusercontent.com/u/133784147?v=4" alt="Adrián Ramírez" width="50" height="50" style="border-radius: 50%;">
+    <br>
+    <a href="https://github.com/AdrianRgGit">Adrián Ramírez</a>
+  </div>
+</div>
+
+
+
 <div align="right">
   <a href="#top">↑ Back to the top</a>
 </div>
 
-## 11. License
+## 12. License
