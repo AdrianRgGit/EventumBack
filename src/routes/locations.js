@@ -3,8 +3,6 @@ const LocationController = require("../controllers/LocationController");
 const router = express.Router();
 const { authentication, isAdmin } = require("../middleware/authentication");
 
-//NOTE: const { uploadUserImages } = require("../middleware/multer");
-
 router.get(
   "/getlocationsdesc",
   authentication,

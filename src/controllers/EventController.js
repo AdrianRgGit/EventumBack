@@ -39,12 +39,10 @@ const EventController = {
     }
   },
 
-  //NOTE: Debido a que no está muy claro como están las relaciones, de momento los traigo así.
   async getEventWithRelations(req, res) {
     try {
       const { id } = req.params;
 
-      //TODO: const event = await Event.findByPk(id, { include: Contracted_service });
       const event = await Event.findByPk(id);
       const contractedService = await Contracted_service.findAll({
         where: { event_id: id },
@@ -212,7 +210,6 @@ const EventController = {
 
   async createEvent(req, res) {
     try {
-      // NOTE: La location_id se la metes a pelo.
       const event = await Event.create({...req.body, banner: req.file?.filename});
       res.status(201).send({ message: "Evento creado exitosamente", event });
     } catch (error) {

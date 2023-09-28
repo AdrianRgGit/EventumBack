@@ -69,7 +69,6 @@ const UserController = {
         }
     },
 
-    //NOTE: No se si he de crear un usuario para eventUser o se asigna manualmente
     async register(req, res, next) {
         try {
             const { password } = req.body;

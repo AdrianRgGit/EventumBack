@@ -11,7 +11,6 @@ const OrganizationController = {
     }
   },
 
-  //NOTE: no funciona bien este endpoint. No los ordena.
   async getAllSortBySector(req, res) {
     try {
       const getAllOrganizations = await Organization.findAll({
@@ -93,7 +92,6 @@ const OrganizationController = {
     }
   },
 
-  //NOTE: La id de type se la tengo que meter manual ya que no se puede automatizar.
   async createOrganization(req, res) {
     try {
       const organization = await Organization.create(req.body);
@@ -113,7 +111,7 @@ const OrganizationController = {
     try {
       const { id } = req.params;
 
-      const updatedOrganization = await Organization.findByPk(id); // ERROR SALTA AQUÍ
+      const updatedOrganization = await Organization.findByPk(id);
 
       if (!updatedOrganization) {
         return res.status(404).send({

@@ -4,7 +4,6 @@ const { authentication, isAdmin } = require("../middleware/authentication");
 const { uploadUserImages } = require("../middleware/multer");
 const router = express.Router();
 
-//NOTE: De momento lo dejo todo libre ya que cualquier usuario puede buscar lo que quiera.
 router.get("/getall", UserController.getAll);
 router.get("/getbyid/:id", UserController.getById);
 router.get("/getbyname/:name", UserController.getUserByName);

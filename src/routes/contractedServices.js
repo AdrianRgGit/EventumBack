@@ -3,7 +3,6 @@ const contractedServices = require("../controllers/ContractedServiceController")
 const { authentication, isAdmin } = require("../middleware/authentication");
 const router = express.Router();
 
-// NOTE: Los pongo todos admin ya que esto es información que no le interesa a un usuario normal.
 router.get(
   "/getall",
   isAdmin,

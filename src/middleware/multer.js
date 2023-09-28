@@ -7,7 +7,7 @@ const maxFileSize = 2 * 1024 * 1024;
 const generateUploadImageMulter = (uploadPath) => {
   const storage = Multer.diskStorage({
     destination: (req, file, cb) => {
-      const destinationPath = path.join(__dirname, "..", uploadPath); // Ruta segura
+      const destinationPath = path.join(__dirname, "..", uploadPath);
       cb(null, destinationPath);
     },
     filename: (req, file, cb) => {

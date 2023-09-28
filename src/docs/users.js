@@ -1,4 +1,3 @@
-// NOTE: No funcionan muy allá pero ya está la estructura de los 4 hechas
 module.exports = {
   paths: {
     "/users/getall": {

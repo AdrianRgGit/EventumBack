@@ -1,7 +1,6 @@
 const { Op } = require("sequelize");
 const { Facilities } = require("../models/index.js");
 
-// NOTE: Address -> adress
 const FacilityController = {
   async getAllFacilities(req, res) {
     try {

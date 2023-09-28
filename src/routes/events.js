@@ -4,10 +4,8 @@ const EventController = require("../controllers/EventController");
 const { authentication, isAdmin } = require("../middleware/authentication");
 const { uploadUserImages } = require("../middleware/multer");
 
-// NOTE: Los dejo libres para que cualquier usuario lo pueda ver
 router.get("/getall", EventController.getAllEvents);
 router.get("/getbyid/:id", EventController.getEventById);
-// NOTE: Este lo dejo para que esté logeado
 router.get(
   "/geteventwithrelations/:id",
   authentication,

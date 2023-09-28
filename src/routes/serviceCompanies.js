@@ -5,7 +5,6 @@ const router = express.Router();
 const ServiceCompanyController = require("../controllers/ServiceCompanyController");
 const { authentication, isAdmin } = require("../middleware/authentication");
 
-//NOTE: Esto lo pongo admin ya que a un user normal le da lo mismo
 router.get(
   "/getall",
   isAdmin,

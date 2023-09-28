@@ -20,10 +20,10 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
-    "no-console": "warn", //NOTE: Marcar como warn los clg
+    "no-console": "warn", 
     "no-warning-comments": [
       "warn",
-      { terms: ["todo", "fixme", "note"], location: "anywhere" }, // NOTE: Marcar como warn los coments con los prefijos anteriores
+      { terms: ["todo", "fixme", "note"], location: "anywhere" },
     ],
   },
 };

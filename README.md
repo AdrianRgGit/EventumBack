@@ -20,7 +20,6 @@ Eventum is an application designed to optimize and automate the process of creat
 9. [README Update](#9-readme-update)
 10. [Contribution](#10-contribution)
 11. [Credits](#11-credits)
-12. [License](#12-license)
 
 ## 1. Structure
 
@@ -510,10 +509,6 @@ In summary, thank you very much to all of you for your hard work and dedication.
   </div>
 </div>
 
-
-
 <div align="right">
   <a href="#top">↑ Back to the top</a>
 </div>
-
-## 12. License

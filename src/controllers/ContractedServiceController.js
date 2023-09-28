@@ -34,7 +34,7 @@ const ContractedServiceController = {
       });
     }
   },
-  // NOTE: Mirar para vincular las tablas de service_id, event_id, service_company_id
+  
   async createContractedService(req, res) {
     try {
       const contractedService = await Contracted_service.create(req.body);
